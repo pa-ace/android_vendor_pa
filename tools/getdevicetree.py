@@ -25,7 +25,7 @@ if isNullOrEmpty(manufacturer):
     manufacturer = raw_input('Manufacturer not found, please write your device manufacturer: ')
 
 device_path = 'device/'+manufacturer+'/'+device
-repo_full = 'ParanoidAndroid/android_' + device_path.replace('/', '_')
+repo_full = 'pa-ace/android_' + device_path.replace('/', '_')
 
 def exists_in_tree(lm, repository):
     for child in lm.getchildren():
