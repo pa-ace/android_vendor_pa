@@ -22,7 +22,7 @@ for dirname, dirnames, filenames in os.walk('./device/'):
                 manufacturer = path[:path.find('/')];
 
 if isNullOrEmpty(manufacturer):
-    manufacturer = raw_input('Manufacturer not found, please write your device manufacturer: ')
+    manufacturer = 'htc'
 
 device_path = 'device/'+manufacturer+'/'+device
 repo_full = 'pa-ace/android_' + device_path.replace('/', '_')
@@ -70,7 +70,7 @@ def add_to_manifest(repositories):
         lm = ElementTree.Element('manifest')
 
     for repository in repositories:
-        repo_account = "ParanoidAndroid"
+        repo_account = "pa-ace"
         repo_name = 'android_'+device_path.replace('/', '_')
         repo_target = device_path
         if exists_in_tree(lm, repo_full):
