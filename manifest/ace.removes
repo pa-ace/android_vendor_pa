@@ -1,2 +1,6 @@
 [
+    {
+        "name":     "platform/prebuilts/misc",
+        "path":     "platform/prebuilts/misc"
+    }
 ]
