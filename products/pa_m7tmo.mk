@@ -13,36 +13,33 @@
 # limitations under the License.
 
 # Check for target product
-ifeq (pa_i605,$(TARGET_PRODUCT))
+ifeq (pa_m7tmo,$(TARGET_PRODUCT))
 
 # Define PA bootanimation size
 PARANOID_BOOTANIMATION_NAME := XHDPI
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_i9300
+OVERLAY_TARGET := pa_xxhdpi
 
 # Build paprefs from sources
-PREFS_FROM_SOURCE ?= true
-
-# Specify phone tech before including full_phone
-$(call inherit-product, vendor/pa/config/cdma.mk)
+PREFS_FROM_SOURCE := true
 
 # Include ParanoidAndroid common configuration
 include vendor/pa/config/pa_common.mk
 
-# Inherit AOSP device configuration
-$(call inherit-product, device/samsung/i605/full_i605.mk)
+$(call inherit-product, device/htc/m7tmo/full_m7tmo.mk)
 
-# CM Package Extras
+# CM Extras
 -include vendor/pa/packages/cm.mk
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_i605
-PRODUCT_BRAND := Samsung
-PRODUCT_MODEL := SCH-I605
-PRODUCT_MANUFACTURER := Samsung
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0ltevzw TARGET_DEVICE=t0ltevzw BUILD_FINGERPRINT="Verizon/t0ltevzw/t0ltevzw:4.1.2/JZO54K/I605VRAMC3:user/release-keys" PRIVATE_BUILD_DESC="t0ltevzw-user 4.1.2 JZO54K I605VRAMC3 release-keys"
+PRODUCT_NAME := pa_m7tmo
+PRODUCT_BRAND := htc
+PRODUCT_MODEL := HTC One
+PRODUCT_MANUFACTURER := HTC
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m7 BUILD_ID=JZO54K BUILD_FINGERPRINT="tmous/m7/m7:4.1.2/JZO54K/170484.7:user/release-keys" PRIVATE_BUILD_DESC="1.27.531.7 CL170484 release-keys"
 
+# Update local_manifest.xml
 GET_VENDOR_PROPS := $(shell vendor/pa/tools/getvendorprops.py $(PRODUCT_NAME))
 GET_PROJECT_RMS := $(shell vendor/pa/tools/removeprojects.py $(PRODUCT_NAME))
 GET_PROJECT_ADDS := $(shell vendor/pa/tools/addprojects.py $(PRODUCT_NAME))
