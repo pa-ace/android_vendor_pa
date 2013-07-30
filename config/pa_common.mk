@@ -13,10 +13,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# Libs
-PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
@@ -52,9 +48,6 @@ else
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
 endif
-
-# T-Mobile theme engine
-include vendor/pa/config/themes_common.mk
 
 # embed superuser into settings 
 SUPERUSER_EMBEDDED := true
