@@ -1,10 +1,4 @@
 # Extras
-
-# su daemon
-service su_daemon /system/xbin/su --daemon
-    class main
-    oneshot
-
 on init
     export ANDROID_CACHE /cache
     export TERMINFO /system/etc/terminfo
@@ -16,7 +10,6 @@ on post-fs-data
     chmod 0771 /cache/dalvik-cache
 
 on boot
-    start su_daemon
     # Run sysinit
     start sysinit
 

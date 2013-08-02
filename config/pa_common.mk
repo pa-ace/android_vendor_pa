@@ -44,10 +44,6 @@ else
         vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
 endif
 
-# embed superuser into settings 
-SUPERUSER_EMBEDDED := true
- PRODUCT_PACKAGES += \
-        su
 # device common prebuilts
 ifneq ($(DEVICE_COMMON),)
     -include vendor/pa/prebuilt/$(DEVICE_COMMON)/prebuilt.mk
@@ -76,7 +72,7 @@ PRODUCT_COPY_FILES += \
 
 PA_VERSION_MAJOR = 3
 PA_VERSION_MINOR = 9
-PA_VERSION_MAINTENANCE = 0
+PA_VERSION_MAINTENANCE = 1
 PA_PREF_REVISION = 1
 
 TARGET_CUSTOM_RELEASETOOL := source vendor/pa/tools/squisher
