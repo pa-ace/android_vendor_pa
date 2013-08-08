@@ -1,8 +1,8 @@
 # Set audio
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.config.ringtone=Themos.ogg \
-  ro.config.notification_sound=Proxima.ogg \
-  ro.config.alarm_alert=Cesium.ogg
+    ro.config.ringtone=Themos.ogg \
+    ro.config.notification_sound=Proxima.ogg \
+    ro.config.alarm_alert=Cesium.ogg
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -44,6 +44,17 @@ else
         vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
 endif
 
+# Embed superuser into settings
+SUPERUSER_EMBEDDED := true
+
+# Enable root for adb+apps
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=3
+
+# Superuser
+PRODUCT_PACKAGES += \
+    su
+
 # device common prebuilts
 ifneq ($(DEVICE_COMMON),)
     -include vendor/pa/prebuilt/$(DEVICE_COMMON)/prebuilt.mk
@@ -72,7 +83,7 @@ PRODUCT_COPY_FILES += \
 
 PA_VERSION_MAJOR = 3
 PA_VERSION_MINOR = 9
-PA_VERSION_MAINTENANCE = 2
+PA_VERSION_MAINTENANCE = 5
 PA_PREF_REVISION = 1
 
 TARGET_CUSTOM_RELEASETOOL := source vendor/pa/tools/squisher
@@ -85,16 +96,7 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.modversion=$(PA_VERSION) \
-  ro.pa.family=$(PA_CONF_SOURCE) \
-  ro.pa.version=$(VERSION) \
-  ro.papref.revision=$(PA_PREF_REVISION) 
-
-
-# goo.im properties
-ifneq ($(DEVELOPER_VERSION),true)
-    PRODUCT_PROPERTY_OVERRIDES += \
-      ro.goo.developerid=paranoidandroid \
-      ro.goo.rom=paranoidandroid \
-      ro.goo.version=$(shell date +%s)
-endif
+    ro.modversion=$(PA_VERSION) \
+    ro.pa.family=$(PA_CONF_SOURCE) \
+    ro.pa.version=$(VERSION) \
+    ro.papref.revision=$(PA_PREF_REVISION)

@@ -1,6 +1,7 @@
 ifeq (pa_grouper,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_grouper.mk
 endif
+<<<<<<< HEAD
 ifeq (pa_i9100,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_i9100.mk
 endif
@@ -13,6 +14,8 @@ endif
 ifeq (pa_ace,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_ace.mk
 endif
+=======
+>>>>>>> 565ef0c03a01f2cd3f186b8e75d2f56319fdc4d2
 ifeq (pa_maguro,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_maguro.mk
 endif
@@ -21,12 +24,6 @@ ifeq (pa_mako,$(TARGET_PRODUCT))
 endif
 ifeq (pa_manta,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_manta.mk
-endif
-ifeq (pa_n7100,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_n7100.mk
-endif
-ifeq (pa_tf700t,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_tf700t.mk
 endif
 ifeq (pa_tilapia,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_tilapia.mk
@@ -37,32 +34,11 @@ endif
 ifeq (pa_toroplus,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_toroplus.mk
 endif
-ifeq (pa_bravo,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_bravo.mk
-endif
 ifeq (pa_crespo,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_crespo.mk
 endif
-ifeq (pa_endeavoru,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_endeavoru.mk
-endif
-ifeq (pa_d710,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_d710.mk
-endif
-ifeq (pa_i605,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_i605.mk
-endif
-ifeq (pa_l900,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_l900.mk
-endif
 ifeq (pa_find5,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_find5.mk
-endif
-ifeq (pa_m7tmo,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_m7tmo.mk
-endif
-ifeq (pa_m7ul,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_m7ul.mk
 endif
 ifeq (pa_flo,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_flo.mk
